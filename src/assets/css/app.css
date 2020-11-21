@@ -61,3 +61,26 @@
   display: block;
   font-weight: 400;
 }
+
+.filter-wrapper {
+  position: fixed;
+  top: 64px;
+  right: 16px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s;
+  background: white;
+  padding: 8px;
+}
+
+.filter-wrapper span {
+  font-size: 14px;
+  margin-right: 16px;
+}
+
+.filter-wrapper select {
+  font-size: 14px;
+  padding: 8px;
+}

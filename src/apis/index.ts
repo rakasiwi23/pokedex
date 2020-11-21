@@ -1,5 +1,10 @@
 import { BASE_URL } from "../configs";
-import { PokemonList, Detail, PokemonSpecies } from "../type_definition";
+import {
+  PokemonList,
+  Detail,
+  PokemonSpecies,
+  PokemonType,
+} from "../type_definition";
 
 export const getListOfPokemon = async (
   nextUrl: string,
@@ -22,5 +27,10 @@ export const getPokemonSpecies = async (
   const response = await (
     await fetch(`${BASE_URL}/pokemon-species/${name}`)
   ).json();
+  return response;
+};
+
+export const getPokemonByType = async (type: string): Promise<PokemonType> => {
+  const response = await (await fetch(`${BASE_URL}/type/${type}`)).json();
   return response;
 };
