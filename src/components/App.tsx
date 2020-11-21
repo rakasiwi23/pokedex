@@ -1,13 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { getListOfPokemon } from "../services/apis";
+import { getListOfPokemon } from "../apis";
 import { PokemonList } from "../type_definition";
 import "../assets/css/app.css";
 import pokedexImg from "../assets/images/pokedex.png";
 import { padNumber } from "../utils";
+import PokemonDetail from "./PokemonDetail";
 
 function App() {
   const [pokemonList, setPokemonList] = useState<PokemonList>();
   const [loadMore, setLoadMore] = useState<boolean>(true);
+  const [showDetail, setShowDetail] = useState<{
+    isOpen: boolean;
+    pokemonId: string;
+    pokemonName: string;
+  }>({ isOpen: false, pokemonId: "", pokemonName: "" });
 
   useEffect(() => {
     const requestPokemons = async (loadMore: boolean) => {
@@ -48,6 +54,14 @@ function App() {
     });
   }, []);
 
+  const onShowDetail = (id: string, name: string) => {
+    setShowDetail({ isOpen: true, pokemonId: id, pokemonName: name });
+  };
+
+  const onHideDetail = () => {
+    setShowDetail({ isOpen: false, pokemonId: "", pokemonName: "" });
+  };
+
   return (
     <div className="app">
       <h1 className="title">
@@ -60,7 +74,12 @@ function App() {
           const pokemonId = url.split("/")[6];
 
           return (
-            <li id={pokemonId} className="pokemon" key={pokemonName}>
+            <li
+              id={pokemonId}
+              className="pokemon"
+              key={pokemonName}
+              onClick={onShowDetail.bind(null, pokemonId, pokemonName)}
+            >
               <span className="number">#{padNumber(Number(pokemonId), 3)}</span>
 
               <div className="image-wrapper">
@@ -77,6 +96,14 @@ function App() {
           );
         })}
       </ul>
+
+      {showDetail.isOpen && (
+        <PokemonDetail
+          pokemonId={showDetail.pokemonId}
+          pokemonName={showDetail.pokemonName}
+          onHideDetail={onHideDetail}
+        />
+      )}
     </div>
   );
 }

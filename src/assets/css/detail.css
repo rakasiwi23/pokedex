@@ -1,0 +1,129 @@
+.detail-wrapper {
+  background-color: rgba(128, 128, 128, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+}
+
+.detail-content {
+  position: fixed;
+  background: white;
+  width: 600px;
+  margin: 0 auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 12px 32px 36px;
+  border-radius: 12px;
+}
+
+.detail-content .name {
+  text-align: center;
+}
+.detail-content .number {
+  display: inline-block;
+}
+.detail-content .image-wrapper {
+  min-width: 200px;
+  height: 203px;
+}
+
+.description-wrapper {
+  margin-left: 32px;
+  line-height: 25px;
+}
+.description {
+  margin-top: 0;
+}
+
+.details {
+  background: #30a7d7;
+  border-radius: 4px;
+  padding: 8px;
+  color: #fff;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 24px;
+  padding: 16px;
+}
+.details p {
+  margin: 0;
+  color: #212121;
+}
+.details p span:first-of-type {
+  display: block;
+  color: #fff;
+  margin-bottom: 4px;
+}
+.details .ability {
+  color: #212121;
+  display: block;
+  text-transform: capitalize;
+}
+
+h3 {
+  margin-top: 32px;
+  padding-bottom: 8px;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 400;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+.types,
+.stats {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.types li,
+.stats li {
+  text-transform: capitalize;
+}
+
+.types li {
+  display: flex;
+  flex-direction: column-reverse;
+  text-align: center;
+  font-size: 14px;
+}
+.types li img {
+  margin-bottom: 8px;
+}
+.types li:not(:first-of-type) {
+  margin-left: 12px;
+}
+
+.stats {
+  display: block;
+}
+.stats li {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.stats li span:last-of-type {
+  background: #93c22e;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 4px;
+  padding: 4px 16px;
+  text-align: center;
+}
+
+.loading {
+  margin-bottom: 0;
+  text-align: center;
+  font-weight: 500;
+  color: rgba(51, 54, 58, 1);
+}
