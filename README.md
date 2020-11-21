@@ -1,2 +1,0 @@
-# pokedex
-Simple pokemon catalogue.
