@@ -64,13 +64,12 @@
 
 .filter-wrapper {
   position: fixed;
-  top: 64px;
+  top: 36px;
   right: 16px;
   border-radius: 4px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: all 0.2s;
   background: white;
   padding: 8px;
 }

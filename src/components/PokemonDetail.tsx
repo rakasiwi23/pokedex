@@ -42,12 +42,12 @@ function PokemonDetail({ pokemonId, pokemonName, onHideDetail }: Props) {
   });
 
   return (
-    <div
-      data-testid="detail-pokemon"
-      className="detail-wrapper"
-      onClick={onHideDetail}
-    >
+    <div data-testid="detail-pokemon" className="detail-wrapper">
       <div className="detail-content">
+        <button className="close-modal" onClick={onHideDetail}>
+          X
+        </button>
+
         {isLoading ? (
           <h2 className="loading">Getting your pokemon information...</h2>
         ) : (

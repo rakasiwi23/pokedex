@@ -35,6 +35,21 @@
   height: 203px;
 }
 
+.close-modal {
+  border: 2px solid #f78f8f;
+  color: #f78f8f;
+  font-size: 16px;
+  border-radius: 50%;
+  background-color: transparent;
+  position: absolute;
+  right: 16px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  padding-top: 3px;
+  outline: none;
+}
+
 .description-wrapper {
   margin-left: 32px;
   line-height: 25px;
